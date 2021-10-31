@@ -1,11 +1,8 @@
 const express = require("express");
 const router = express.Router();
-
-// Import Controllers
-const misc = require("../controllers/misc.controller");
+const { WelcomeController } = require("../controllers/util.controller");
 
 /* POST ContactUsController */
-router.post("/", misc.ContactUsController);
-router.post("/contact", misc.ContactUsController);
+router.post("/", WelcomeController);
 
 module.exports = router;

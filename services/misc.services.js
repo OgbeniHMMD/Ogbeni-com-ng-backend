@@ -7,12 +7,4 @@ module.exports = {
       message: "Telegram Feature not implemented",
     };
   },
-
-  NotImplemented: () => {
-    return {
-      status: "501",
-      code: "NOT_IMPLEMENTED",
-      message: "Feature not implemented",
-    };
-  },
 };

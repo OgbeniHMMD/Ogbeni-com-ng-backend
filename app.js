@@ -3,8 +3,10 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
-// Import the router files
-const miscRouter = require("./routes/misc.route");
+// Import the routers
+const utilRoutes = require("./routes/util.route");
+const miscRoutes = require("./routes/misc.route");
+const { ResourceNotFoundController } = require("./controllers/util.controller");
 
 const app = express();
 
@@ -15,15 +17,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 /* Route handlers */
-app.use("/", miscRouter);
-
-/* Capture ALL 404 errors */
-app.all("*", function (req, res) {
-  res.status(404).json({
-    message: "Resource not found",
-    verb: req.method,
-    status: 404,
-  });
-});
+app.use("/", utilRoutes);
+app.use("/misc", miscRoutes);
+app.all("*", ResourceNotFoundController);
 
 module.exports = app;
