@@ -20,7 +20,6 @@ module.exports = {
         };
       })
       .catch((error) => {
-        console.log(error.response.data);
         response = {
           status: 400,
           message:
