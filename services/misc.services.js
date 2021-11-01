@@ -20,10 +20,12 @@ module.exports = {
         };
       })
       .catch((error) => {
+        console.log(error.response.data);
         response = {
           status: 400,
           message:
             "I'm Sorry, your message couldn't be delivered because of a technical issue. Please try again in a moment",
+          description: error?.response?.data?.description,
         };
       });
 
