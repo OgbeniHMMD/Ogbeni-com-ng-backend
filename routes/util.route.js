@@ -1,14 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const { ContactUsController } = require("../controllers/misc.controller");
 const {
+  WelcomeController,
   ResourceNotFoundController,
 } = require("../controllers/util.controller");
 
-/* POST Contact-us Controller */
-router.post("/contact", ContactUsController);
-
-/* Capture ALL 404 errors */
-router.all("*", ResourceNotFoundController);
+/* POST ContactUsController */
+router.post("/", WelcomeController);
 
 module.exports = router;

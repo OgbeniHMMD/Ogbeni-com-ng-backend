@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const { WelcomeController } = require("../controllers/util.controller");
+const { ContactUsController } = require("../controllers/misc.controller");
 
-/* POST ContactUsController */
-router.post("/", WelcomeController);
+/* POST Contact-us Controller */
+router.post("/contact", ContactUsController);
 
 module.exports = router;

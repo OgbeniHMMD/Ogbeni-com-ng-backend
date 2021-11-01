@@ -1,8 +1,9 @@
 module.exports = {
   WelcomeMessage: () => {
     return {
-      status: "501",
-      message: "Feature not implemented",
+      status: 200,
+      docs: "",
+      author: "hmmd@ogbeni.com.ng",
     };
   },
 
